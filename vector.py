@@ -37,13 +37,4 @@ if add_document:
 
 retrieve = chroma.as_retriever(search_kwargs={"k":2})
 
-@tool
-def search_company_docs(query: str) -> str:
-    """Searches a database of restaurant reviews (customer reviews, ratings, pizza, service, prices, etc.).
-    Use this tool first for any questions related to restaurants, customer reviews, food quality, or service,
-    before resorting to any external internet searches."""
-    results = retrieve.invoke(query)
-    if not results:
-        return "لم أجد معلومات متعلقة بهذا السؤال في المستندات."
-    return "\n".join(doc.page_content for doc in results)
 
