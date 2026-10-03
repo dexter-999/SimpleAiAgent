@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain.agents import create_agent
 from tools import wiki_tool, search_tools
-from vector import search_company_docs
+from tools import search_company_docs
 
 
 load_dotenv()
